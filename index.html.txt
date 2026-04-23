@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Ibuk Tyas 🤍</title>
+
+<style>
+body {
+margin: 0;
+font-family: 'Segoe UI', sans-serif;
+background: linear-gradient(135deg, #ffe6eb, #fff);
+text-align: center;
+overflow-x: hidden;
+}
+
+/* OPENING */
+#opening {
+padding: 60px;
+}
+
+#openingText {
+max-width: 600px;
+margin: auto;
+line-height: 1.8;
+font-size: 18px;
+}
+
+/* BUTTON */
+.btn {
+margin-top: 30px;
+padding: 15px 30px;
+border: none;
+border-radius: 30px;
+background: #ff6f91;
+color: white;
+font-size: 18px;
+cursor: pointer;
+}
+
+/* ENVELOPE */
+.envelope {
+width: 220px;
+height: 130px;
+background: #ff6f91;
+margin: 60px auto;
+position: relative;
+display: none;
+cursor: pointer;
+}
+
+.envelope:before {
+content: '';
+position: absolute;
+top: -65px;
+border-left: 110px solid transparent;
+border-right: 110px solid transparent;
+border-bottom: 65px solid #ff6f91;
+}
+
+/* CONTENT */
+.container {
+display: none;
+padding: 20px;
+animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+.glow {
+font-size: 28px;
+color: #ff6f91;
+text-shadow: 0 0 10px #ff6f91, 0 0 20px #ff6f91;
+}
+
+.card {
+background: white;
+padding: 25px;
+border-radius: 20px;
+max-width: 650px;
+margin: 20px auto;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+line-height: 1.7;
+white-space: pre-line;
+}
+
+/* SLIDESHOW */
+.slideshow img {
+width: 260px;
+border-radius: 15px;
+display: none;
+animation: fade 2s;
+}
+
+@keyframes fade {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+/* HEART */
+.heart {
+position: fixed;
+width: 10px;
+height: 10px;
+background: red;
+transform: rotate(45deg);
+animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+0% { top: -10px; }
+100% { top: 100vh; }
+}
+
+/* STAR */
+.star {
+position: fixed;
+width: 2px;
+height: 2px;
+background: white;
+animation: blink 2s infinite;
+}
+@keyframes blink {
+0%,100% {opacity: 0;}
+50% {opacity: 1;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+<div id="opening">
+<h2>🤍</h2>
+<p id="openingText"></p>
+<button class="btn" onclick="nextOpening()">Next 💌</button>
+</div>
+
+<!-- TITLE -->
+<h1 class="glow" style="display:none;" id="title">For Ibuk Tyas 🤍</h1>
+<button class="btn" onclick="showEnvelope()" id="startBtn" style="display:none;">Klik ini ya ibuk 💌</button>
+
+<!-- ENVELOPE -->
+<div class="envelope" id="env" onclick="openLetter()"></div>
+
+<!-- CONTENT -->
+<div class="container" id="content">
+<h2 class="glow">Happy Birthday Ibuk Tyas 🤍</h2>
+<div class="card" id="text"></div>
+
+<div class="slideshow">
+<img src="foto1.jpg" class="slide">
+<img src="foto2.jpg" class="slide">
+<img src="foto3.jpg" class="slide">
+</div>
+
+<br>
+<button class="btn" onclick="playMusic()">Play Music 🎶</button>
+
+<audio id="music" loop>
+<source src="aboutyou.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<script>
+// OPENING TEXT
+const openingMessage = `Before you open this… 🤍
+
+Aku cuma mau ibuk tau,
+kalau dari sekian banyak hal yang pernah aku lewatin,
+ketemu ibuk adalah salah satu hal baik yang pernah terjadi di hidup aku.
+
+Mungkin ibuk ngga selalu sadar,
+tapi cara ibuk hadir, cara ibuk peduli,
+itu punya arti yang besar banget buat aku.
+
+So… this little thing I made,
+is just a small way to say
+you mean so much more than words could ever explain.
+
+Klik pelan-pelan ya ibuk 💌`;
+
+let j = 0;
+function typeOpening() {
+if (j < openingMessage.length) {
+document.getElementById("openingText").innerHTML += openingMessage.charAt(j);
+j++;
+setTimeout(typeOpening, 25);
+}
+}
+typeOpening();
+
+function nextOpening() {
+document.getElementById("opening").style.display = "none";
+document.getElementById("title").style.display = "block";
+document.getElementById("startBtn").style.display = "inline-block";
+}
+
+// MAIN MESSAGE
+const message = `Happy birthday to the most amazing mentor I could ever have 🤍
+
+IBUKKK TYASSS, aku bener-bener bersyukur bisa kenal dan dibimbing sama ibuk. Dari semua hal yang ibuk lakuin, cara ibuk memperhatikan hal-hal kecil, cara ibuk selalu ada, sampai cara ibuk bikin suasana jadi hangatt… itu semua bikin aku ngerasa nyaman banget jadi anak mentornya ibuk. Ibuk tuh bukan cuma keren, tapi juga punya hati yang besar yang selalu nyebarin kebaikan.
+
+Kadang aku mikir… “Do you think I have forgotten about you?”
+And the answer is no, I never will.
+Because every little thing you’ve done, every word, every moment it stays. It means something. It shapes me.
+
+Ibukk itu kaya rumah, tempat yang selalu bikin tenang dan tanpa ibuk sadari, ibuk udah jadi bagian penting dalam perjalanan aku. Makasihh yaaaa ibuk, udah jadi sosok yang penyayang, sabar, dan selalu ngerti.
+
+I hope today reminds you of how loved you are.
+I hope you realize how many hearts you’ve touched, including mine.
+And I hope life gives back all the kindness you’ve been giving to everyone around you.
+
+Selamat ulang tahun, Ibuk Tyas 🤍
+Semoga semua hal baik selalu datang ke ibuk, seperti ibuk yang selalu jadi hal baik untuk orang lain. Jangan pernah berubah ya, karena dunia butuh lebih banyak orang seperti ibuk.
+
+With love,
+OCHA anak mentor yang selalu bangga punya ibuk 🤍🥹`;
+
+let i = 0;
+function typeWriter() {
+if (i < message.length) {
+document.getElementById("text").innerHTML += message.charAt(i);
+i++;
+setTimeout(typeWriter, 20);
+}
+}
+
+function showEnvelope() {
+document.getElementById("startBtn").style.display = "none";
+document.getElementById("env").style.display = "block";
+}
+
+function openLetter() {
+document.getElementById("env").style.display = "none";
+document.getElementById("content").style.display = "block";
+typeWriter();
+slideshow();
+hearts();
+stars();
+}
+
+// SLIDESHOW
+function slideshow() {
+let slides = document.getElementsByClassName("slide");
+let index = 0;
+setInterval(() => {
+for (let s of slides) s.style.display = "none";
+slides[index].style.display = "block";
+index = (index + 1) % slides.length;
+}, 2500);
+}
+
+// MUSIC
+function playMusic() {
+document.getElementById("music").play();
+}
+
+// HEARTS
+function hearts() {
+setInterval(() => {
+let h = document.createElement("div");
+h.className = "heart";
+h.style.left = Math.random() * 100 + "vw";
+document.body.appendChild(h);
+setTimeout(() => h.remove(), 5000);
+}, 300);
+}
+
+// STARS
+function stars() {
+for (let i = 0; i < 50; i++) {
+let s = document.createElement("div");
+s.className = "star";
+s.style.top = Math.random() * 100 + "vh";
+s.style.left = Math.random() * 100 + "vw";
+document.body.appendChild(s);
+}
+}
+</script>
+
+</body>
+</html>
